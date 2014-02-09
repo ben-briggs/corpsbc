@@ -25,17 +25,17 @@ def test():
 
     time.sleep(1)
 
-    results = browser.find_elements_by_class_name('web_result')
+    print 'Displaying result...'
+    results = browser.find_elements_by_class_name('g')
     for result in results:
-        try:
+        #try:
             print '-' * 80
             print result.text
-        except:
-            pass
+        #except ex:
+            #            pass
     return 0
 
 #test()
-print(timeit.timeit("test()", setup="from __main__ import test", number=10))
-print("Hello World")
+print timeit.timeit("test()", setup="from __main__ import test", number=10)
 browser.close()
 display.stop()
